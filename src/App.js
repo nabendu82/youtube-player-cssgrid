@@ -30,11 +30,15 @@ videoSearch(searchTerm) {
   render() {
     return (
       <div>
-        <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)}/>
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList
-          onVideoSelect={userSelected => this.setState({selectedVideo: userSelected})}
-          videos={this.state.videos} />
+        <SearchBar onSearchTermChange={searchTerm => this.videoSearch(searchTerm)} />
+        <div className="wrapper__container">
+          <div className="grid__container">
+            <VideoDetail video={this.state.selectedVideo} />
+            <VideoList
+              onVideoSelect={userSelected => this.setState({ selectedVideo: userSelected })}
+              videos={this.state.videos} />
+          </div>
+        </div>
       </div>
     );
   }
